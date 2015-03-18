@@ -4,6 +4,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import chart.bean.AvgDurationReport;
 import chart.bean.DistReport;
+import chart.bean.TimeToFixReport;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,5 +25,10 @@ public class ReportController {
     @RequestMapping("/avgDuration")
     public AvgDurationReport avgDurationReport(@RequestParam(value="name", defaultValue="World") String name) {
         return new AvgDurationReport(150.0f);
+    }
+
+    @RequestMapping("/timeToFix")
+    public TimeToFixReport timeToFixReport(@RequestParam(value="name", defaultValue="World") String name) {
+        return new TimeToFixReport(1435.5f);
     }
 }
