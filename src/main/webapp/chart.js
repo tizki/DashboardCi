@@ -26,7 +26,18 @@ for (var p in result){
         data.addRow(ar);
 }
 
+        var getAvgDuration = function() {
+            var jsonData = $.ajax({
+                url: "/avgDuration",
+                dataType:"json",
+                async: false
+            }).responseJSON; return "Duration Average " + jsonData.avgDuration   }
 
+        $(document).ready(function() {
+                $("#averageDuration").text(getAvgDuration())
+            }
+
+        )
 var getTimeToFix = function() {
         var jsonData = $.ajax({
             url: "/timeToFix",
