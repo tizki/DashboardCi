@@ -13,13 +13,29 @@
       
     function drawChart() {
       var jsonData = $.ajax({
-          url: "http://localhost:8080/distribution",
+          url: "/distribution",
           dataType:"json",
           async: false
           }).responseText;
           
+var data = new google.visualization.DataTable();
+
+// Declare columns
+data.addColumn('string', 'Employee Name');
+data.addColumn('number','Percentage');
+
+// Add data.
+data.addRows([
+  ['Mike', 0.1], // Example of specifying actual and formatted values.
+  ['Bob', 0.2],                              // More typically this would be done using a
+  ['Alice', 0.3],                           // formatter.
+  ['Frank',0.2],
+  ['Floyd', 0.1],
+  ['Fritz', 0.1]
+]);
+
       // Create our data table out of JSON data loaded from server.
-      var data = new google.visualization.DataTable(jsonData);
+     // var data = new google.visualization.DataTable(jsonData);
       var options = {
             title: 'Builds Result Distribution ',
             colors: ['#B0DF00', '#D52D2C', '#A6A6A6','#FDE06A']
