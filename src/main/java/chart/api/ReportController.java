@@ -2,6 +2,7 @@ package chart.api;
 
 import java.util.concurrent.atomic.AtomicLong;
 
+import chart.bean.AvgDurationReport;
 import chart.bean.DistReport;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,6 +18,11 @@ public class ReportController {
 
     @RequestMapping("/distribution")
     public DistReport distReport(@RequestParam(value="name", defaultValue="World") String name) {
-        return new DistReport(100, 30, 50, 15, 5 );
+        return new DistReport(30, 50, 15, 5 );
+    }
+
+    @RequestMapping("/avgDuration")
+    public AvgDurationReport avgDurationReport(@RequestParam(value="name", defaultValue="World") String name) {
+        return new AvgDurationReport(150.0f);
     }
 }
