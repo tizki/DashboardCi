@@ -6,6 +6,7 @@
     <groupId>org.springframework</groupId>
     <artifactId>dashboard-ci</artifactId>
     <version>0.1.0</version>
+    <name>Dashboard-CI</name>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
