@@ -44,14 +44,14 @@ for (var p in result){
       chart.draw(data, options);
     }
 
-    function getAvgDuration() {
+    var getAvgDuration = function() {
         var jsonData = $.ajax({
             url: "/avgDuration",
             dataType:"json",
             async: false
-        }).responseText; return jsonData   }
+        }).responseJSON; return "Duration Average " + jsonData.avgDuration   }
 
-    $("#averageDuration").text(getAvgDuration())
+    $('#averageDuration').text(getAvgDuration())
     </script>
   </head>
 
