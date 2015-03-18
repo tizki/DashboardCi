@@ -11,4 +11,7 @@ public class AvgDurationReport {
         this.avgDuration = avgDuration;
     }
 
+    public float getAvgDuration() {
+        return avgDuration;
+    }
 }
