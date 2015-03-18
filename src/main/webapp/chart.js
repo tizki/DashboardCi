@@ -31,7 +31,7 @@ for (var p in result){
                 url: "/avgDuration",
                 dataType:"json",
                 async: false
-            }).responseJSON; return "Duration Average " + jsonData.avgDuration   }
+            }).responseJSON; return jsonData.avgDuration   }
 
         $(document).ready(function() {
                 $("#averageDuration").text(getAvgDuration())
@@ -43,7 +43,7 @@ var getTimeToFix = function() {
             url: "/timeToFix",
             dataType:"json",
             async: false
-        }).responseJSON; return "Average Time To Fix" + jsonData.timeToFix   }
+        }).responseJSON; return jsonData.timeToFix   }
 
 $(document).ready(function() {
                 $("#timeToFix").text(getTimeToFix())
