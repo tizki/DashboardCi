@@ -21,18 +21,17 @@
 var data = new google.visualization.DataTable();
 
 // Declare columns
-data.addColumn('string', 'Employee Name');
+data.addColumn('string', 'Build state');
 data.addColumn('number','Percentage');
 
-// Add data.
-data.addRows([
-  ['Mike', 0.1], // Example of specifying actual and formatted values.
-  ['Bob', 0.2],                              // More typically this would be done using a
-  ['Alice', 0.3],                           // formatter.
-  ['Frank',0.2],
-  ['Floyd', 0.1],
-  ['Fritz', 0.1]
-]);
+var result = JSON.parse(jsonData);
+for (var p in result){
+	 var ar = [];
+	ar.push(p)
+	ar.push(result[p]);
+        data.addRow(ar);
+}
+
 
       // Create our data table out of JSON data loaded from server.
      // var data = new google.visualization.DataTable(jsonData);
