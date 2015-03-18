@@ -20,17 +20,17 @@ public class ReportController {
         return new DistReport(30, 50, 15, 5 );
     }
 
-    @RequestMapping("/platform/distribution")
+    @RequestMapping("/Platform/distribution")
     public DistReport platformDistReport(@RequestParam(value="name", defaultValue="World") String name) {
-        return ReportFactory.createDistReport("","/csv/platform/distribution.csv");
+        return ReportFactory.createDistReport("","csv/platform/distribution.csv");
     }
 
-    @RequestMapping("/ui/distribution")
+    @RequestMapping("/UI/distribution")
     public DistReport uiDistReport(@RequestParam(value="name", defaultValue="World") String name) {
         return ReportFactory.createDistReport("","csv/ui/distribution.csv");
     }
 
-    @RequestMapping("/saw/distribution")
+    @RequestMapping("/Saw/distribution")
     public DistReport sawDistReport(@RequestParam(value="name", defaultValue="World") String name) {
         return ReportFactory.createDistReport("","csv/saw/distribution.csv");
     }
