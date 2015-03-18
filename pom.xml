@@ -13,16 +13,22 @@
         <version>1.2.2.RELEASE</version>
     </parent>
 
+    <properties>
+        <opencsv.version>2.3</opencsv.version>
+        <java.version>1.7</java.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <dependency>
+        <groupId>net.sf.opencsv</groupId>
+        <artifactId>opencsv</artifactId>
+        <version>${opencsv.version}</version>
+    </dependency>
     </dependencies>
-
-    <properties>
-        <java.version>1.7</java.version>
-    </properties>
 
 
     <build>
