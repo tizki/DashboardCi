@@ -3,7 +3,7 @@ package chart.bean;
 /**
  * Created by kleintid on 3/18/2015.
  */
-public class AvgDurationReport {
+public class AvgDurationReport implements DashBoardReport {
 
     private final float avgDuration;
 

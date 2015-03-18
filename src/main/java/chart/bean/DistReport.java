@@ -3,7 +3,7 @@ package chart.bean;
 /**
  * Created by kleintid on 3/18/2015.
  */
-public class DistReport {
+public class DistReport implements DashBoardReport {
 
 //    private final int sampleSize;
     private final float successRate;
