@@ -72,8 +72,27 @@ for (var p in result){
 
   <body>
     <!--Div that will hold the pie chart-->
+
     <div id="piechart" style="width: 900px; height: 500px;"></div>
+
     <div id="averageDuration" style="width: 200px; height: 200px;"></div>
     <div id="timeToFix" style="width: 200px; height: 200px;"></div>
+
+    <div id="averageDuration" style="width: 200px; height: 200px;">
+        <script type="text/javascript">
+		var getAvgDuration =   function()  {
+                var jsonData = $.ajax({
+                    url: "/avgDuration",
+                    dataType:"json",
+                    async: false
+                });   
+		return jsonData;
+	 }
+
+             $("#averageDuration").text(getAvgDuration())
+
+
+    </script></div>
+>>>>>>> Stashed changes
   </body>
 </html>
