@@ -200,7 +200,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Dashboard <small>Statistics Overview</small>
+                          SAW CI <small>Build statistics - Fedex Day 2015</small>
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
@@ -214,14 +214,14 @@
 
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-green">
+                        <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
                                         <i class="fa fa-tasks fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div>Average Duration!</div>
+                                        <div>Platform Average Duration</div>
                                         <div id="averageDuration" class="huge"></div>
                                     </div>
                                 </div>
@@ -236,17 +236,106 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-tasks fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div>UI Average Duration</div>
+                                        <div id="averageDurationUI" class="huge"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-red">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-tasks fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div>SAW Average Duration</div>
+                                        <div id="averageDurationSaw" class="huge"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-yellow">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
                                         <i class="fa fa-support fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div>Average Time To Fix</div>
+                                        <div>Platform Average Time To Fix</div>
                                         <div id="timeToFix" class="huge"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-support fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div>UI Average Time To Fix</div>
+                                        <div id="timeToFixUI" class="huge"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-support fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div>Saw Average Time To Fix</div>
+                                        <div id="timeToFixSaw" class="huge"></div>
                                     </div>
                                 </div>
                             </div>
@@ -262,23 +351,7 @@
                 </div>
                 <!-- /.row -->
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Area Chart</h3>
-                            </div>
-                            <div class="panel-body">
-                                
-								<!--<div id="piechart" style="width: 900px; height: 500px;"></div>-->
-								<!--<div id="averageDuration" style="width: 200px; height: 200px;"></div>-->
-								<!--<div  style="width: 200px; height: 200px;"></div>-->
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
 
                 <div class="row">
                     <div class="col-lg-4">
@@ -316,6 +389,24 @@
                         </div>
                     </div>
 
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Area Chart</h3>
+                            </div>
+                            <div class="panel-body">
+
+                                <!--<div id="piechart" style="width: 900px; height: 500px;"></div>-->
+                                <!--<div id="averageDuration" style="width: 200px; height: 200px;"></div>-->
+                                <!--<div  style="width: 200px; height: 200px;"></div>-->
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.row -->
 

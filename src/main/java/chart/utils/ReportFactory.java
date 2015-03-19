@@ -49,7 +49,7 @@ public class ReportFactory {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        throw new IllegalStateException("cannot create max report");
+        throw new IllegalStateException("cannot create distribution report");
     }
 
     public static MaxReport createMaxReport(String reportType, String reportTypeFileName) {
@@ -63,7 +63,18 @@ public class ReportFactory {
         throw new IllegalStateException("cannot create max report");
     }
 
-    public static AvgDurationReport createAvgDurationReport(String reportType, String reportTypeFileName) {
+    public static TimeToFixReport createTimeToFixReport(String reportTypeFileName) {
+        String[] rawData;
+        try {
+            rawData = DashBoardCICsvReader.getCsv(reportTypeFileName);
+            return new TimeToFixReport(Float.valueOf(rawData[0]));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        throw new IllegalStateException("cannot create time to fix report");
+    }
+
+    public static AvgDurationReport createAvgDurationReport(String reportTypeFileName) {
         String[] rawData;
         try {
             rawData = DashBoardCICsvReader.getCsv(reportTypeFileName);
@@ -71,6 +82,6 @@ public class ReportFactory {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        throw new IllegalStateException("cannot create max report");
+        throw new IllegalStateException("cannot create average duration report");
     }
 }

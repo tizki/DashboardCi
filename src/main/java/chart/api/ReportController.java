@@ -15,6 +15,10 @@ public class ReportController {
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
 
+    @RequestMapping("/test")
+    public String test(@RequestParam(value="name", defaultValue="World") String name) {
+        return name;
+    }
     @RequestMapping("/distribution")
     public DistReport distReport(@RequestParam(value="name", defaultValue="World") String name) {
         return new DistReport(30, 50, 15, 5 );
@@ -35,14 +39,34 @@ public class ReportController {
         return ReportFactory.createDistReport("","csv/saw/distribution.csv");
     }
 
-    @RequestMapping("/avgDuration")
+    @RequestMapping("/Platform/avgDuration")
     public AvgDurationReport avgDurationReport(@RequestParam(value="name", defaultValue="World") String name) {
-        return new AvgDurationReport(150.0f);
+        return ReportFactory.createAvgDurationReport("csv/platform/avgDuration.csv");
     }
 
-    @RequestMapping("/timeToFix")
-    public TimeToFixReport timeToFixReport(@RequestParam(value="name", defaultValue="World") String name) {
-        return new TimeToFixReport(1435.5f);
+    @RequestMapping("UI/avgDuration")
+    public AvgDurationReport avgDurationUIReport(@RequestParam(value="name", defaultValue="World") String name) {
+        return ReportFactory.createAvgDurationReport("csv/ui/avgDuration.csv");
+    }
+
+    @RequestMapping("Saw/avgDuration")
+    public AvgDurationReport avgDurationSawReport(@RequestParam(value="name", defaultValue="World") String name) {
+        return ReportFactory.createAvgDurationReport("csv/saw/avgDuration.csv");
+    }
+
+    @RequestMapping("Platform/timeToFix")
+    public TimeToFixReport timeToFixPlatformReport(@RequestParam(value="name", defaultValue="World") String name) {
+        return ReportFactory.createTimeToFixReport("csv/platform/timeToFix.csv");
+    }
+
+    @RequestMapping("UI/timeToFix")
+    public TimeToFixReport timeToFixUIReport(@RequestParam(value="name", defaultValue="World") String name) {
+        return ReportFactory.createTimeToFixReport("csv/ui/timeToFix.csv");
+    }
+
+    @RequestMapping("Saw/timeToFix")
+    public TimeToFixReport timeToFixSawReport(@RequestParam(value="name", defaultValue="World") String name) {
+        return ReportFactory.createTimeToFixReport("csv/saw/timeToFix.csv");
     }
 
     @RequestMapping("/max")

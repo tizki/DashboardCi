@@ -19,9 +19,9 @@ function createChart(){
     }
 
 
-    var getAvgDuration = function () {
+    var getAvgDuration = function (repoName) {
         var jsonData = $.ajax({
-            url: "/avgDuration",
+            url: "/" + repoName +"/avgDuration",
             dataType: "json",
             async: false
         }).responseJSON;
@@ -29,12 +29,20 @@ function createChart(){
     }
 
     $(document).ready(function () {
-            $("#averageDuration").text(getAvgDuration())
+            $("#averageDuration").text(getAvgDuration("Platform"))
         }
     )
-    var getTimeToFix = function () {
+    $(document).ready(function () {
+            $("#averageDurationUI").text(getAvgDuration("UI"))
+        }
+    )
+    $(document).ready(function () {
+            $("#averageDurationSaw").text(getAvgDuration("Saw"))
+        }
+    )
+    var getTimeToFix = function (repoName) {
         var jsonData = $.ajax({
-            url: "/timeToFix",
+            url: "/" + repoName +"/timeToFix",
             dataType: "json",
             async: false
         }).responseJSON;
@@ -42,7 +50,15 @@ function createChart(){
     }
 
     $(document).ready(function () {
-            $("#timeToFix").text(getTimeToFix())
+            $("#timeToFix").text(getTimeToFix("Platform"))
+        }
+    )
+    $(document).ready(function () {
+            $("#timeToFixUI").text(getTimeToFix("UI"))
+        }
+    )
+    $(document).ready(function () {
+            $("#timeToFixSaw").text(getTimeToFix("Saw"))
         }
     )
 }
@@ -71,7 +87,9 @@ function drawChart(chartName) {
     // var data = new google.visualization.DataTable(jsonData);
     var options = {
         title: 'Builds Result Distribution ',
-        colors: ['#B0DF00', '#D52D2C', '#A6A6A6', '#FDE06A']
+//        colors: ['#B0DF00', '#D52D2C', '#A6A6A6', '#FDE06A']
+        colors: ['#29A329', '#D52D2C', '#747474', '#E6E600'],
+        pieSliceTextStyle: { color: 'black' }
     };
 
     return [data, options]
